@@ -11,6 +11,18 @@
  	where id=#{id} and pwd=#{pwd}
  </select>
  
+ <select id="memberGetId" parameterType="java.util.Map" resultType="String">
+ 	select id
+ 	from member
+ 	where name=#{name} and email=#{email}
+ </select>
+ 
+ <select id="memberGetPwd" parameterType="java.util.Map" resultType="String">
+ 	select pwd
+ 	from member
+ 	where id=#{id} and email=#{email}
+ </select>
+ 
  <insert id="memberJoin" parameterType="java.util.Map">
  	insert into member
  	values(

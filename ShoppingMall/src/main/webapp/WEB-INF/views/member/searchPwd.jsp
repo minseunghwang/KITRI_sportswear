@@ -60,7 +60,7 @@ body{
 	 <div class="row">
 	<div class = "searchIDcomponent">
 		
-		<form action="${pageContext.request.contextPath }/SearchPwdController" name="f" method="post">
+		<form action="${pageContext.request.contextPath }/member/getPwd.do" name="f" method="post">
 			<fieldset>
 				<legend style="text-align:center;">Search Password</legend>
 					<br>

@@ -65,11 +65,11 @@ body{
 					<br>
 				
 				<div class="form-group1">
-					<c:if test="${m.id ==null}">
+					<c:if test="${id ==null}">
 						<p class="spantext"> You entered a wrong id or email address.</p>
 					</c:if>
-					<c:if test="${m.id !=null}">
-						<p class="spantext">Your temporary password is  ' <b>${member.pwd } </b> '</p>
+					<c:if test="${id !=null}">
+						<p class="spantext">Your temporary password is  ' <b>${pwd } </b> '</p>
 					</c:if>
 				</div>
 					<br>
@@ -77,7 +77,7 @@ body{
 				<div class="btns">
 					<div class="btn_login">
 						<input type="button" class="btn btn-dark" value="Go to Signin" 
-						onclick="location.href='views/member/login.jsp'">
+						onclick="location.href='${pageContext.request.contextPath }/member/login.do'">
 					</div>
 				</div>
 					

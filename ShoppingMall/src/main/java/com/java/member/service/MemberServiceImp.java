@@ -100,6 +100,52 @@ public class MemberServiceImp implements MemberService {
         
         
 	}
+
+	@Override
+	public void memberGetId(ModelAndView mav) {
+		// TODO Auto-generated method stub
+		Map<String, Object> map =mav.getModelMap();
+		HttpServletRequest request=(HttpServletRequest)map.get("request");
+		Map<String, String> hmap=new HashMap<String, String>();
+		
+		String name=request.getParameter("name");
+		String email=request.getParameter("email");
+		
+		hmap.put("name", name);
+		hmap.put("email",email);
+		String id =memberDao.memberGetId(hmap);
+		
+		mav.addObject("name",name);
+		mav.addObject("email",email);
+		mav.addObject("id",id);
+		
+		mav.setViewName("/member/getId");
+		
+		
+	}
+
+	@Override
+	public void memberGetPwd(ModelAndView mav) {
+		// TODO Auto-generated method stub
+		Map<String, Object> map =mav.getModelMap();
+		HttpServletRequest request=(HttpServletRequest)map.get("request");
+		Map<String, String> hmap=new HashMap<String, String>();
+		
+		String id=request.getParameter("id");
+		String email=request.getParameter("email");
+		
+		hmap.put("id", id);
+		hmap.put("email",email);
+		String pwd = memberDao.memberGetPwd(hmap);
+		
+		
+		mav.addObject("id",id);
+		mav.addObject("email",email);
+		mav.addObject("pwd",pwd);
+		
+		mav.setViewName("/member/getPwd");
+	
+	}
     
 	
 

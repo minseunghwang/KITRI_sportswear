@@ -64,21 +64,21 @@ body{
 					<br>
 				
 				<div class="form-group1">
-					<c:if test="${m.id ==null}">
+					<c:if test="${id ==null}">
 						<p class="spantext"> Can't find id or a wrong email address.</p>
 					</c:if>
-					<c:if test="${m.id !=null}">
-						<p class="spantext" >${m.name }'s id is  ' ${m.id } '.</p>
+					<c:if test="${id !=null}">
+						<p class="spantext" >${name }'s id is  ' ${id } '.</p>
 					</c:if>
 				</div>
 					<br>
 					
 				<div class="btns">
 					<div class="btn_login">
-						<input type="button" class="btn btn-dark" value="Go to Signin" onclick="location.href='views/member/login.jsp'"/>
+						<input type="button" class="btn btn-dark" value="Go to Signin" onclick="location.href='${pageContext.request.contextPath }/member/login.do'"/>
 					</div>
 					<div class="btn_findpwd">
-						<input type="button" class="btn btn-outline-dark" value="Search PW" onclick="location.href='views/member/searchPwd.jsp'"/>
+						<input type="button" class="btn btn-outline-dark" value="Search PW" onclick="location.href='${pageContext.request.contextPath }/member/searchPwd.do'"/>
 					</div>
 
 				</div>

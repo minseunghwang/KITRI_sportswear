@@ -56,7 +56,7 @@ body{
 	 <div class="row">
 	<div class = "searchIDcomponent">
 		
-		<form action="${pageContext.request.contextPath }/SearchIdController" name="f" method="post">
+		<form action="${pageContext.request.contextPath }/member/getId.do" name="f" method="post">
 			<fieldset>
 				<legend style="text-align:center;">Search ID</legend>
 					<br>

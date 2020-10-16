@@ -37,13 +37,7 @@ public class MemberController {
 //	}
 	
 //	
-//	public ModelAndView joinMember(HttpServletRequest request, HttpServletResponse response) {
-//		ModelAndView mav=new ModelAndView();
-//		
-//		return mav;
-//	}
-//	
-	
+
 	@RequestMapping(value="/member/login.do")
 	public ModelAndView memberLogin(HttpServletRequest request, HttpServletResponse response) {		
 		return new ModelAndView("member/login");
@@ -80,6 +74,34 @@ public class MemberController {
 		return mav;
 	}
 	
+	@RequestMapping(value="/member/searchId.do")
+	public ModelAndView memberSearchId(HttpServletRequest request, HttpServletResponse response) {
+		return new ModelAndView("/member/searchId");
+	}
+
+	@RequestMapping(value="/member/searchPwd.do")
+	public ModelAndView memberSearchPwd(HttpServletRequest request, HttpServletResponse response) {
+		
+		return new ModelAndView("/member/searchPwd");
+	}
+	
+	@RequestMapping(value="/member/getId.do")
+	public ModelAndView memberGetId(HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView mav=new ModelAndView();
+		mav.addObject("request",request);
+		memberService.memberGetId(mav);
+		//memberService.
+		return mav; 
+	}
+	
+	@RequestMapping(value="/member/getPwd.do")
+	public ModelAndView memberGetPwd(HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView mav=new ModelAndView();
+		mav.addObject("request",request);
+		memberService.memberGetPwd(mav);
+		//memberService.
+		return mav; 
+	}
 	
 //	
 //	public ModelAndView mypage(HttpServletRequest request, HttpServletResponse response) {
@@ -94,17 +116,7 @@ public class MemberController {
 //		return mav;
 //	}
 //	
-//	public ModelAndView searchId(HttpServletRequest request, HttpServletResponse response) {
-//		ModelAndView mav=new ModelAndView();
-//		
-//		return mav;
-//	}
-//	
-//	public ModelAndView searchPwd(HttpServletRequest request, HttpServletResponse response) {
-//		ModelAndView mav=new ModelAndView();
-//		
-//		return mav;
-//	}
+
 //	
 
 

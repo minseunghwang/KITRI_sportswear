@@ -90,8 +90,8 @@ body{
 					<br>
 					<br>
 				<div class="searchUser" style="text-align:center;">
-					<a style="color: black;text-decoration: none;" href="${pageContext.request.contextPath }/views/member/searchId.jsp">Search ID /</a>
-					<a style="color: black;text-decoration: none;" href="${pageContext.request.contextPath }/views/member/searchPwd.jsp">Search PW</a>
+					<a style="color: black;text-decoration: none;" href="${pageContext.request.contextPath }/member/searchId.do">Search ID /</a>
+					<a style="color: black;text-decoration: none;" href="${pageContext.request.contextPath }/member/searchPwd.do">Search PW</a>
 				</div>
 			</fieldset>
 			<input type="hidden" name="previousUriToken" value="<%=request.getHeader("Referer") %>" />
