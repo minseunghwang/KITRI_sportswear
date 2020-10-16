@@ -48,6 +48,12 @@ public class ReviewDaoImpl implements ReviewDao{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	@Override
+	public ArrayList<ReviewDto> selectReviewInProductByPageNum(int p_num, int page) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 	@Override
 	public void update(ReviewDto notice) {
@@ -64,7 +70,7 @@ public class ReviewDaoImpl implements ReviewDao{
 	@Override
 	public ArrayList<ReviewDto> selectAll() {
 		// TODO Auto-generated method stub
-		return null;
+		return null;d
 	}
 
 	@Override
