@@ -34,7 +34,7 @@ public class MemberServiceImp implements MemberService {
 		
 		
 		String value=memberDao.memberLogin(hmap);
-		//¼¼¼Ç ¼³Á¤ 
+		//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
 		session.setAttribute("id", id);
 		session.setAttribute("pwd", pwd);
 		session.setAttribute("memberType", value);
@@ -65,28 +65,36 @@ public class MemberServiceImp implements MemberService {
 		Map<String, Object> hmap=new HashMap<String, Object>();
 		
 		int check=0;
-		String id = request.getParameter("id"); //±âº»Å°
+		String id = request.getParameter("id"); //ï¿½âº»Å°
         String pwd=request.getParameter("pwd");
         String name=request.getParameter("name");
         String email=request.getParameter("email");
         String addr=request.getParameter("addr");
-        int type=1;//ÀÏ¹ÝÈ¸¿ø Å¸ÀÔ ¼³Á¤
+        int type=1;//ï¿½Ï¹ï¿½È¸ï¿½ï¿½ Å¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         int point=2000;
         
-        
-        hmap.put("id",id);
-        hmap.put("pwd",pwd);
-	    hmap.put("name",name);
-	    hmap.put("email",email);
-	    hmap.put("addr",addr);
-	    hmap.put("type",type);
-	    hmap.put("point",point);
-	        
-	    check=memberDao.memberJoin(hmap);
-        
+        if(id==null|| id.equals("")|| id.equals("null")) {
+        	check=0;
+        }else if(pwd==null|| pwd.equals("")||pwd.equals("null")) {
+        	check=0;
+        }else if(name==null|| name.equals("")|| name.equals("null")) {
+        	check=0;
+        }else if(email==null|| email.equals("")|| email.equals("null")) {
+        	check=0;
+        }else if(addr==null|| addr.equals("")|| addr.equals("null")) {
+        	check=0;
+        }else {
+	        hmap.put("id",id);
+	        hmap.put("pwd",pwd);
+		    hmap.put("name",name);
+		    hmap.put("email",email);
+		    hmap.put("addr",addr);
+		    hmap.put("type",type);
+		    hmap.put("point",point);    
+		    check=memberDao.memberJoin(hmap);
+        }
         mav.addObject("check",check);
         mav.setViewName("member/signupOk");
-        
         
         
 	}
