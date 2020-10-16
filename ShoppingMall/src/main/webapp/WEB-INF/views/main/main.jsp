@@ -39,7 +39,6 @@
 
 	<jsp:include page="/WEB-INF/views/common/header2.jsp" />
 
-
 	<main role="main">
 	
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
