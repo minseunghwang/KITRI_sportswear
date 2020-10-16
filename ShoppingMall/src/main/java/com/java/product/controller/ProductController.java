@@ -47,5 +47,5 @@ public class ProductController {
 		productService.getCategoryProducts(mav);
 
 		return new ModelAndView("product/categoryList");
-	} 
+	}
 }
