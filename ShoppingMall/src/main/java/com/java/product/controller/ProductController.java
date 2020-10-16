@@ -40,7 +40,7 @@ public class ProductController {
 		return mav;
 	}
 	
-	@RequestMapping(value="/category.do")
+	@RequestMapping(value="/product/category.do")
 	public ModelAndView categoryTop(HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("request",request);
