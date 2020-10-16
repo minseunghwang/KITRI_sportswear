@@ -61,10 +61,10 @@
 
 				<c:choose>
 					<c:when test="${param.category eq 'top' }">
-						<img id="back_img" src="resources/sample_img/wideimage14.jpg">
+						<img id="back_img" src="${pageContext.request.contextPath }/resources/sample_img/wideimage14.jpg">
 					</c:when>
 					<c:otherwise>
-						<img id="back_img" src="resources/sample_img/wideimage16.jpg">
+						<img id="back_img" src="${pageContext.request.contextPath }/resources/sample_img/wideimage16.jpg">
 					</c:otherwise>
 				</c:choose>
 
@@ -226,7 +226,7 @@
 	<%@include file="/WEB-INF/views/common/footer2.jsp"%>
 
 	<!-- Bootstrap core JavaScript -->
-	<script src="resources/vendor/jquery/jquery.min.js"></script>
-	<script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="${pageContext.request.contextPath }/resources/vendor/jquery/jquery.min.js"></script>
+	<script src="${pageContext.request.contextPath }/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

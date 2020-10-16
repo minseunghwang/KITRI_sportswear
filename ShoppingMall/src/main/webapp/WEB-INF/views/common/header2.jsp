@@ -531,7 +531,7 @@
 
 		<div class="page-header border-top">
 			<div class="category-header">
-				<a href="<%=request.getContextPath()%>/category.do?category=top&page=1" style="text-decoration: none;">Top</a> 
+				<a href="<%=request.getContextPath()%>/product/category.do?category=top&page=1" style="text-decoration: none;">Top</a> 
 				<a href="<%=request.getContextPath()%>/CategoryController?category=bottom&page=1" style="text-decoration: none;">Bottom</a>
 			</div>
 		</div>
