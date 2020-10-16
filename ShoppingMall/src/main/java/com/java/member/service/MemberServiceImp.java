@@ -34,7 +34,7 @@ public class MemberServiceImp implements MemberService {
 		
 		
 		String value=memberDao.memberLogin(hmap);
-		//¼¼¼Ç ¼³Á¤ 
+		//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
 		session.setAttribute("id", id);
 		session.setAttribute("pwd", pwd);
 		session.setAttribute("memberType", value);
@@ -65,12 +65,12 @@ public class MemberServiceImp implements MemberService {
 		Map<String, Object> hmap=new HashMap<String, Object>();
 		
 		int check=0;
-		String id = request.getParameter("id"); //±âº»Å°
+		String id = request.getParameter("id"); //ê¸°ë³¸í‚¤
         String pwd=request.getParameter("pwd");
         String name=request.getParameter("name");
         String email=request.getParameter("email");
         String addr=request.getParameter("addr");
-        int type=1;//ÀÏ¹İÈ¸¿ø Å¸ÀÔ ¼³Á¤
+        int type=1;//ì¼ë°˜ íšŒì›
         int point=2000;
         
         
