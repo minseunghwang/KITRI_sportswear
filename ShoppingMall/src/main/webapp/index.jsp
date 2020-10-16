@@ -8,6 +8,6 @@
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
-	<c:redirect url="/MainListController" />
+	<c:redirect url="/product/main.do" />
 </body>
 </html>

@@ -74,19 +74,29 @@ public class MemberServiceImp implements MemberService {
         int point=2000;
         
         
-        hmap.put("id",id);
-        hmap.put("pwd",pwd);
-	    hmap.put("name",name);
-	    hmap.put("email",email);
-	    hmap.put("addr",addr);
-	    hmap.put("type",type);
-	    hmap.put("point",point);
-	        
-	    check=memberDao.memberJoin(hmap);
-        
+        if(id==null|| id.equals("")|| id.equals("null")) {
+        	check=0;
+        }else if(pwd==null|| pwd.equals("")||pwd.equals("null")) {
+        	check=0;
+        }else if(name==null|| name.equals("")|| name.equals("null")) {
+        	check=0;
+        }else if(email==null|| email.equals("")|| email.equals("null")) {
+        	check=0;
+        }else if(addr==null|| addr.equals("")|| addr.equals("null")) {
+        	check=0;
+        }else {
+	        hmap.put("id",id);
+	        hmap.put("pwd",pwd);
+		    hmap.put("name",name);
+		    hmap.put("email",email);
+		    hmap.put("addr",addr);
+		    hmap.put("type",type);
+		    hmap.put("point",point);    
+		    check=memberDao.memberJoin(hmap);
+        }
         mav.addObject("check",check);
         mav.setViewName("member/signupOk");
-        
+         
         
         
 	}
