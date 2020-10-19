@@ -33,7 +33,7 @@ public interface ProductService {
 	
 	ArrayList<ProductImageVO> getDetailImgAll(int p_num);
 	
-	ProductDto getProduct(int num);
+	public void getProductDetail(ModelAndView mav);
 	
 	int checkQuantity(int productNum, String size);
 	

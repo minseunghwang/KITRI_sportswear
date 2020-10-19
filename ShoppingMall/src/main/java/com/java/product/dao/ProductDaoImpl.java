@@ -124,8 +124,7 @@ public class ProductDaoImpl implements ProductDao {
 
 	@Override
 	public ProductDto select(int num) {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSessionTemplate.selectOne("detail_product", num);
 	}
 
 	@Override

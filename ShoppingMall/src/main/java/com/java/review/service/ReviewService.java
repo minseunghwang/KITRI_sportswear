@@ -7,7 +7,7 @@ import com.java.review.dto.ReviewDto;
 
 
 
-public interface Service {
+public interface ReviewService {
 	void add(ReviewDto notice);
 
 	ReviewDto getReview(int num);

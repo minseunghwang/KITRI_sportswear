@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.java.review.dao.ReviewDao;
 import com.java.review.dto.ReviewDto;
 
 
-public class ServiceImpl implements Service{
+@Component
+public class ReviewServiceImpl implements ReviewService{
 	
 	@Autowired
 	private ReviewDao reviewDao;
@@ -73,5 +75,4 @@ public class ServiceImpl implements Service{
 	public int getcountByP_Num(int p_num) {
 		return reviewDao.countreviewByP_Num(p_num);
 	}
-
 }

@@ -41,11 +41,18 @@ public class ProductController {
 	}
 	
 	@RequestMapping(value="/product/category.do")
-	public ModelAndView categoryTop(HttpServletRequest request, HttpServletResponse response) {
+	public ModelAndView proudctCategory(HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("request",request);
 		productService.getCategoryProducts(mav);
-
-		return new ModelAndView("product/categoryList");
+		return mav;
+	}
+	
+	@RequestMapping(value="/product/productDetail.do")
+	public ModelAndView productDetail(HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("request",request);
+		productService.getProductDetail(mav);
+		return mav;
 	}
 }
