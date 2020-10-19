@@ -47,14 +47,8 @@ body{
 
 </style>
 <script type="text/javascript">
-	
-/* function hello(){
-	
-	alert("회원가입을 축하합니다! 가입 축하 적립금 2000원을 드립니다");
-	
-} */
 
-/* function idCheck(root){//아이디 중복 확인을 누르면 입력한 아이디를 가지고 들어가야한다.
+function idCheck(root){//아이디 중복 확인을 누르면 입력한 아이디를 가지고 들어가야한다.
 	   if($("input[name = 'id']").val() == ""){
 	      alert("아이디를 입력하세요");
 	      $("input[name = 'id']").focus();
@@ -64,7 +58,7 @@ body{
 	   var url = root+"/member/idCheck.do?id=" + $("input[name = 'id']").val();
 	   
 	   window.open(url, "", "width = 250, height = 150");
-} */
+	}
 
 </script>
 
@@ -84,7 +78,7 @@ body{
 				<div class="form-group">
 					<label for="InputID">ID</label> 
 					<input type="text" class="form-control" id="id" name="id">
-					<%-- <input type="button" class="btn btn-primary" id="check_btn" value="중복확인" onclick="idcheck('${pageContext.request.contextPath }')"/> --%>
+					<input type="button" class="btn btn-primary" id="check_btn" value="중복확인" onclick="idCheck('${pageContext.request.contextPath }')"/>
 				</div>
 				
 				<div class="form-group">

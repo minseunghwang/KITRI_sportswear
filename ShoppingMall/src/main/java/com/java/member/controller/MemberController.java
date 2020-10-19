@@ -19,25 +19,7 @@ public class MemberController {
 	@Autowired
 	private MemberService memberService;
 	
-	
-//	@RequestMapping(value="/member/delete.do")
-//	public ModelAndView deleteMember(HttpServletRequest request, HttpServletResponse response) {
-//		
-//		System.out.println("OK.");
-//		ModelAndView mav=new ModelAndView();
-//		
-//		return mav;
-//	}
-	
-	
-//	public ModelAndView IdCheck(HttpServletRequest request, HttpServletResponse response) {
-//		ModelAndView mav=new ModelAndView();
-//		
-//		return mav;
-//	}
-	
-//	
-
+	//로그인관련 메소드	
 	@RequestMapping(value="/member/login.do")
 	public ModelAndView memberLogin(HttpServletRequest request, HttpServletResponse response) {		
 		return new ModelAndView("member/login");
@@ -47,9 +29,7 @@ public class MemberController {
 	public ModelAndView memberLoginOk(HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mav=new ModelAndView();
 		mav.addObject("request",request);
-
 		memberService.memberLoginOk(mav);
-		
 		return mav;
 	}
 	
@@ -90,7 +70,6 @@ public class MemberController {
 		ModelAndView mav=new ModelAndView();
 		mav.addObject("request",request);
 		memberService.memberGetId(mav);
-		//memberService.
 		return mav; 
 	}
 	
@@ -99,24 +78,43 @@ public class MemberController {
 		ModelAndView mav=new ModelAndView();
 		mav.addObject("request",request);
 		memberService.memberGetPwd(mav);
-		//memberService.
 		return mav; 
 	}
 	
-//	
-//	public ModelAndView mypage(HttpServletRequest request, HttpServletResponse response) {
-//		ModelAndView mav=new ModelAndView();
-//		
-//		return mav;
-//	}
-//	
-//	public ModelAndView search(HttpServletRequest request, HttpServletResponse response) {
-//		ModelAndView mav=new ModelAndView();
-//		
-//		return mav;
-//	}
-//	
+	@RequestMapping(value="/member/idCheck.do")
+	public ModelAndView memberIdCheck(HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView mav=new ModelAndView();
+		mav.addObject("request",request);
+		memberService.memberIdCheck(mav);
+		return mav;
+	}
+	
+	
+	//마이페이지
+	@RequestMapping(value="/member/myPage.do")
+	public ModelAndView memberMypage(HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView mav=new ModelAndView();
+		mav.addObject("request",request);
+		memberService.memberMyPage(mav);
+		return mav;
+	}
 
+	@RequestMapping(value="/member/editPage.do")
+	public ModelAndView memberEditPage(HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView mav=new ModelAndView();
+		mav.addObject("request",request);
+		memberService.memberEditPage(mav);
+		return mav;
+	}
+	
+//	@RequestMapping(value="/member/delete.do")
+//	public ModelAndView deleteMember(HttpServletRequest request, HttpServletResponse response) {
+//		
+//		System.out.println("OK.");
+//		ModelAndView mav=new ModelAndView();
+//		
+//		return mav;
+//	}
 //	
 
 

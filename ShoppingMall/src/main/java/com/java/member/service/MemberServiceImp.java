@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.java.member.dao.MemberDao;
+import com.java.member.dto.MemberDto;
 
 
 @Component
@@ -146,6 +147,54 @@ public class MemberServiceImp implements MemberService {
 		mav.setViewName("/member/getPwd");
 	
 	}
+
+	@Override
+	public void memberIdCheck(ModelAndView mav) {
+		// TODO Auto-generated method stub
+		Map<String, Object> map=mav.getModelMap();
+		HttpServletRequest request=(HttpServletRequest)map.get("request");
+		Map<String, String> hmap=new HashMap<String, String>();
+		String id=request.getParameter("id");
+		
+		hmap.put("id", id);
+		int check=memberDao.memberIdCheck(hmap);
+		
+		mav.addObject("id",id);
+		mav.addObject("check", check);
+		mav.setViewName("/member/idCheck");
+		
+	}	
+	
+	
+	@Override
+	public void memberMyPage(ModelAndView mav) {
+		// TODO Auto-generated method stub
+		Map<String, Object> map =mav.getModelMap();
+		HttpServletRequest request=(HttpServletRequest)map.get("request");
+		Map<String, String> hmap=new HashMap<String, String>();
+		HttpSession session=request.getSession(false);
+		String id=(String) session.getAttribute("id");
+		
+		hmap.put("id", id);
+		String point=memberDao.memberGetPoint(hmap);
+		
+		mav.addObject("point",point);
+		mav.setViewName("/mypage/myInfo");
+		
+	}
+
+	@Override
+	public void memberEditPage(ModelAndView mav) {
+		// TODO Auto-generated method stub
+		Map<String, Object> map =mav.getModelMap();
+		HttpServletRequest request=(HttpServletRequest)map.get("request");
+		HttpSession session=request.getSession(false);
+		String id=(String) session.getAttribute("id");
+		//MemberDto dto=memberDao.memberGetInfo(id);
+		
+	}
+
+
     
 	
 

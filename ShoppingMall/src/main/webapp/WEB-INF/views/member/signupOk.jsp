@@ -12,7 +12,7 @@
 	<%-- ${root } --%>
 	<c:if test="${check>0 }">
 		<script type="text/javascript">
-			alert("회원가입이 완료되었습니다.");
+			alert("회원가입을 축하합니다! 가입 축하 적립금 2000원을 드립니다");
 			location.href="${root}/member/login.do";
 		</script>
 	</c:if>

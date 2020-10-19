@@ -10,4 +10,8 @@ public interface MemberService {
 	public void memberJoinOk(ModelAndView mav);
 	public void memberGetId(ModelAndView mav);
 	public void memberGetPwd(ModelAndView mav);
+	public void memberIdCheck(ModelAndView mav);
+	
+	public void memberMyPage(ModelAndView mav);
+	public void memberEditPage(ModelAndView mav);
 }

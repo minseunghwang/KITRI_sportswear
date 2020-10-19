@@ -41,5 +41,25 @@ public class MemberDaoImp implements MemberDao {
 		// TODO Auto-generated method stub
 		return sqlSessionTemplate.selectOne("memberGetPwd",map);
 	}
+	
+	@Override
+	public int memberIdCheck(Map<String, String> map) {
+		// TODO Auto-generated method stub
+		int check=0;
+		String id=sqlSessionTemplate.selectOne("memberIdCheck",map);
+		if(id !=null) {
+			check=1;
+			
+		}
+		return check;
+	}
+
+	@Override
+	public String memberGetPoint(Map<String, String> map) {
+		// TODO Auto-generated method stub
+		return sqlSessionTemplate.selectOne("memberGetPoint",map);
+	}
+
+
 
 }

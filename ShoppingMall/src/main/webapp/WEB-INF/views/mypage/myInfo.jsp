@@ -83,13 +83,13 @@ body{
 
 			<div class = "membershowbox">
 				<div class="hellouser">
-					<img src="sample_img/user_basic.png" alt="" width="75" height="75"> 
+					<img src="${pageContext.request.contextPath }/resources/sample_img/user_basic.png" alt="" width="75" height="75"> 
 					<h4 style="font-size:1.5em; "> &nbsp; ${sessionScope.id } 고객님, 안녕하세요!</h4>
 				</div>
 					<br>
 
 					<div class="pointbox" >
-						<h6> POINTS : &nbsp; ${m.point} 점 </h6>
+						<h6> POINTS : &nbsp; ${point} 점 </h6>
 						<!--  <a href="#" id="mypointmore" > more>> </a> -->		
 					</div>
 					<br> 

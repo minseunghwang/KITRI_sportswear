@@ -433,8 +433,8 @@
 					<ul>
 						<li><a href="${pageContext.request.contextPath }/ListNoticeController?page=1">공지사항</a></li>
 						<li><a href="${pageContext.request.contextPath }/AllOrderListController?o_state=1&page=1">주문조회</a></li>
-						<li><a href="${pageContext.request.contextPath }/MypageController?o_state=1">마이페이지</a></li>
-						<li><a href="<%=request.getContextPath()%>/member/logout.do">로그아웃</a></li>
+						<li><a href="${pageContext.request.contextPath }/member/myPage.do">마이페이지</a></li>
+						<li><a href="${pageContext.request.contextPath }/member/logout.do">로그아웃</a></li>
 					</ul>
 				</div>
 			</c:if>
@@ -491,7 +491,7 @@
 
 			<div class="person-img">
 				<c:if test="${sessionScope.memberType == 1 }">
-					<a href="${pageContext.request.contextPath }/MypageController?o_state=1">
+					<a href="${pageContext.request.contextPath }/member/myPage.do">
 				</c:if>
 				<c:if test="${sessionScope.memberType ==null}">
 					<a href="<%=request.getContextPath()%>/member/login.do">
