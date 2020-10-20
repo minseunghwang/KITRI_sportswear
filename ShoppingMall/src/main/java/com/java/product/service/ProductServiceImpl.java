@@ -96,12 +96,12 @@ public class ProductServiceImpl implements ProductService{
 			products = productDao.selectCategoryProductsSort(category,page,orderBy);
 		}
 		
+		
 		for(ProductDto product:products) {
 			ArrayList<ReviewDto> reviews = (ArrayList<ReviewDto>) reviewDao.selectByP_Num(product.getNum());
 			product.setReviews(reviews);
+			product.setPriceView(product.getPrice());
 		}
-		
-		request.setAttribute("products", products);
 		
 		PaginationDto pn = new PaginationDto();
 		
@@ -128,6 +128,7 @@ public class ProductServiceImpl implements ProductService{
 		}
 		
 //		request.setAttribute("pn", pn);
+		mav.addObject("products", products);
 		mav.addObject("pn", pn);
 		mav.setViewName("product/categoryList");
 	}
@@ -206,10 +207,13 @@ public class ProductServiceImpl implements ProductService{
 		}
 		
 		ProductDto product = productDao.select(num);
-		System.out.println(product);
+		product.setPriceView(product.getPrice());
 		
-		ArrayList<ReviewDto> reviewsAll = (ArrayList<ReviewDto>) reviewDao.selectByP_Num(num);
-		System.out.println(reviewsAll);
+		List<ReviewDto> reviewsAll = reviewDao.selectByP_Num(num);
+		
+		System.out.println(num + " : " + product);
+		
+//		System.out.println(reviewsAll.get(0));
 		
 		if(reviewsAll.size() != 0) {
 			System.out.println("읭 ?" + reviewsAll);

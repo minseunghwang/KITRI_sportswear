@@ -41,7 +41,7 @@ public class ReviewDaoImpl implements ReviewDao{
 	
 	@Override
 	public List<ReviewDto> selectByP_Num(int pnum) {
-		System.out.println("p_num : " +  pnum);
+		System.out.println("여기오긴와?" + pnum);
 		return sqlSessionTemplate.selectList("pNum_Review",pnum);
 	}
 

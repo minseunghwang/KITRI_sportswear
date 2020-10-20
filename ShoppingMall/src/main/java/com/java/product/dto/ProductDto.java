@@ -124,8 +124,8 @@ public class ProductDto {
 		return priceView;
 	}
 
-	public void setPriceView(String priceView) {
-		this.priceView = priceView;
+	public void setPriceView(int price) {
+		this.priceView = Common.priceView(price);
 	}
 
 	@Override
