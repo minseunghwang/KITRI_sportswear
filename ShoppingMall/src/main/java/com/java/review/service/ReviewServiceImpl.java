@@ -32,7 +32,7 @@ public class ReviewServiceImpl implements ReviewService{
 	}
 	
 	@Override
-	public ArrayList<ReviewDto> getReviewInProductByPageNum(int p_num, int page) {
+	public List<ReviewDto> getReviewInProductByPageNum(int p_num, int page) {
 		return reviewDao.selectReviewInProductByPageNum(p_num, page);
 	}
 

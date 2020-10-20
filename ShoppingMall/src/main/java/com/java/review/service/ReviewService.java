@@ -13,7 +13,7 @@ public interface ReviewService {
 	ReviewDto getReview(int num);
 	
 	List<ReviewDto> getReviewByProductNum(int p_num);
-	ArrayList<ReviewDto> getReviewInProductByPageNum(int p_num, int page);
+	List<ReviewDto> getReviewInProductByPageNum(int p_num, int page);
 
 	void editReview(ReviewDto notice);
 

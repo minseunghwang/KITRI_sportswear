@@ -211,10 +211,6 @@ public class ProductServiceImpl implements ProductService{
 		
 		List<ReviewDto> reviewsAll = reviewDao.selectByP_Num(num);
 		
-		System.out.println(num + " : " + product);
-		
-//		System.out.println(reviewsAll.get(0));
-		
 		if(reviewsAll.size() != 0) {
 			System.out.println("읭 ?" + reviewsAll);
 			mav.addObject("reviewsAll", reviewsAll);
@@ -253,9 +249,10 @@ public class ProductServiceImpl implements ProductService{
 			}
 		}
 		
-		ArrayList<ReviewDto> reviews = reviewService.getReviewInProductByPageNum(num, page);
+		List<ReviewDto> reviews = reviewDao.selectReviewInProductByPageNum(num, page);
 		
-		product.setReviews(reviews);
+		product.setReviews((ArrayList<ReviewDto>) reviews);
+		System.out.println(reviews);
 		
 		mav.addObject("product", product);
 		mav.addObject("reviews", reviews);

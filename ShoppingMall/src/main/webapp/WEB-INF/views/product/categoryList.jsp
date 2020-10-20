@@ -112,7 +112,6 @@
 										<a style="color: black;text-decoration: none;" href="${pageContext.request.contextPath }/product/productDetail.do?num=${product.num }&page=1"><b>${product.name }</b></a>
 									</h6>
 									<h7>￦ ${product.priceView }</h7>
-									
 								</div>
 								<div class="card-footer">			
 									<!-- 평점 총합 변수 선언 -->

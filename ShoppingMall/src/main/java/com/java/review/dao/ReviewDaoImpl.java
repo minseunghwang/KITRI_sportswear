@@ -1,7 +1,9 @@
 package com.java.review.dao;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,14 +43,18 @@ public class ReviewDaoImpl implements ReviewDao{
 	
 	@Override
 	public List<ReviewDto> selectByP_Num(int pnum) {
-		System.out.println("여기오긴와?" + pnum);
 		return sqlSessionTemplate.selectList("pNum_Review",pnum);
 	}
 
 	@Override
-	public ArrayList<ReviewDto> selectReviewInProductByPageNum(int p_num, int page) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<ReviewDto> selectReviewInProductByPageNum(int p_num, int page) {
+		Map<String, Integer> hmap = new HashMap<String, Integer>();
+		hmap.put("p_num", p_num);
+		int start = (page-1) * 3 +1;
+		int end = page * 3;
+		hmap.put("start", start);
+		hmap.put("end", end);
+		return sqlSessionTemplate.selectList("ReviewInProduct",hmap);
 	}
 
 	@Override

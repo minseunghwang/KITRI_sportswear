@@ -332,7 +332,7 @@
 			</div>
 			
 			<div class="col-lg-4">
-				<img class="card-img-top img-fluid rounded" id="viewImg" src="${product.img }">
+				<img class="card-img-top img-fluid rounded" id="viewImg" src="${pageContext.request.contextPath }/resources/${product.img }">
 			</div>
 			<div class="col-lg-7" id="product-info">
 			
@@ -374,11 +374,11 @@
 				<br>
 				<div class="select-amount">
 					<a href="#" id="decQuantity" onclick="countDown()">
-						<img src="sample_img/ico_decQ_disabled.png" id="countDown">
+						<img src="${pageContext.request.contextPath }/resources/sample_img/ico_decQ_disabled.png" id="countDown">
 					</a>
 					<span id="select-quantity">1</span>
 					<a href="#" id="incQuantity" onclick="countUp()">
-						<img src="sample_img/ico_incQ.png" id="countUp">
+						<img src="${pageContext.request.contextPath }/resources/sample_img/ico_incQ.png" id="countUp">
 					</a>
 				</div>
 				<br><br>
@@ -453,7 +453,7 @@
 						<!--  -->
 						<div class="image-content" style="box-sizing: border-box; overflow:hidden;">
 							<div id="image" style="width:75px;  float:left;">
-								<img width="50px" height="75" src="${review.img}" id="review-img">
+								<img width="50px" height="75" src="${pageContext.request.contextPath }/resources/${review.img}" id="review-img">
 							</div>
 							<div class="content" id="content" style="width:100%; height:50">${review.content }</div>	
 							<!-- <a href="#" class="btn_open">더보기</a>

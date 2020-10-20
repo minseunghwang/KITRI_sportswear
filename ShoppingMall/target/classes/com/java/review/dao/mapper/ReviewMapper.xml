@@ -5,16 +5,24 @@
 
 <mapper namespace="com.java.review.dao.mapper.ReviewMapper">
 	<resultMap type="com.java.review.dto.ReviewDto" id="review_dto">
-		<result column="num" property="num"/>	
-		<result column="m_id" property="m_id"/>	
-		<result column="p_num" property="p_num"/>	
-		<result column="rate" property="rate"/>	
-		<result column="content" property="content"/>	
-		<result column="img" property="img"/>	
-		<result column="r_date" property="r_date"/>	
+		<result column="NUM" property="num"/>	
+		<result column="M_ID" property="m_id"/>	
+		<result column="P_NUM" property="p_num"/>	
+		<result column="RATE" property="rate"/>	
+		<result column="CONTENT" property="content"/>	
+		<result column="IMG" property="img"/>	
+		<result column="R_DATE" property="r_date"/>	
 	</resultMap>
 	
-	<select id="pNum_Review" parameterType="String" resultMap="review_dto">
+	<select id="pNum_Review" parameterType="int" resultType="com.java.review.dto.ReviewDto">
 		select * from review where p_num=#{pnum} order by num
+	</select>
+
+	<select id="ReviewInProduct" parameterType="int" resultMap="review_dto">
+		<![CDATA[
+		select x.NUM, x.M_ID, x.P_NUM, x.RATE, x.CONTENT, x.IMG, x.R_DATE from 
+				(select rownum as rnum, a.* from
+					(select * from review where p_num=#{p_num} order by r_date desc) A where ROWNUM <= #{end}) X where x.rnum >= #{start}
+		]]>	
 	</select>
 </mapper>
