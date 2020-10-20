@@ -96,28 +96,28 @@
 					<fieldset>
 						<div class="form-group">
 							<label for="ViewID">ID</label> 
-							<input type="text" class="form-control" name="id" value="${m.id}" readonly>
+							<input type="text" class="form-control" name="id" value="${memberDto.id}" readonly>
 						</div>
 						
 						<div class="form-group">
 							<label for="EditPwd">Password</label> <input
-								type="password" class="form-control" name="pwd" value="${m.pwd }" >
+								type="password" class="form-control" name="pwd" value="${memberDto.pwd }" >
 						</div>
 						
 						<div class="form-group">
 							<label for="ViewName">Name</label> <input
-								type="text" class="form-control" name="name" value="${m.name }" readonly>
+								type="text" class="form-control" name="name" value="${memberDto.name }" readonly>
 								
 						</div>
 						
 						<div class="form-group">
 							<label for="EidtEmail">Email address</label> <input
-								type="email" class="form-control" name="email" value="${m.email }" aria-describedby="emailHelp" > 
+								type="email" class="form-control" name="email" value="${memberDto.email }" aria-describedby="emailHelp" > 
 						</div>
 						<!-- 주소api 추후 추가 -->
 						<div class="form-group">
 							<label for="EditAddress">Address</label> <input
-								type="text" class="form-control" name="addr" value="${m.addr }">
+								type="text" class="form-control" name="addr" value="${memberDto.addr }">
 						</div>
 						
 						<div class="form-group">
@@ -125,7 +125,7 @@
 							<div class="btn_modify">
 								<button type="submit" class="btn btn-outline-dark btn-block">수정</button>
 							</div>
-							<c:if test="${m.type==1}">
+							<c:if test="${memberDto.type==1}">
 							<div class="btn_delAccount">
 								<input type="button" class="btn btn-outline-danger btn-block" onclick="return checkrem();"
 									value="탈퇴">

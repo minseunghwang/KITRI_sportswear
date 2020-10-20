@@ -6,6 +6,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.java.member.dto.MemberDto;
+
 @Component
 public class MemberDaoImp implements MemberDao {
 
@@ -58,6 +60,12 @@ public class MemberDaoImp implements MemberDao {
 	public String memberGetPoint(Map<String, String> map) {
 		// TODO Auto-generated method stub
 		return sqlSessionTemplate.selectOne("memberGetPoint",map);
+	}
+
+	@Override
+	public MemberDto memberGetInfo(String id) {
+		// TODO Auto-generated method stub
+		return sqlSessionTemplate.selectOne("memberGetInfo",id);
 	}
 
 

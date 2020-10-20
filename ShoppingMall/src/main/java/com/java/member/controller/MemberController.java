@@ -108,14 +108,14 @@ public class MemberController {
 	}
 	
 //	@RequestMapping(value="/member/delete.do")
-//	public ModelAndView deleteMember(HttpServletRequest request, HttpServletResponse response) {
+//	public ModelAndView memberDelete(HttpServletRequest request, HttpServletResponse response) {
 //		
 //		System.out.println("OK.");
 //		ModelAndView mav=new ModelAndView();
 //		
 //		return mav;
 //	}
-//	
+	
 
 
 }

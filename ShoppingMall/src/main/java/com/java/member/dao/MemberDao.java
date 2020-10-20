@@ -2,6 +2,8 @@ package com.java.member.dao;
 
 import java.util.Map;
 
+import com.java.member.dto.MemberDto;
+
 public interface MemberDao {
 	
 	public String memberLogin(Map<String,String> map);
@@ -11,4 +13,5 @@ public interface MemberDao {
 	public int memberIdCheck(Map<String, String> map);
 	
 	public String memberGetPoint(Map<String,String> map);
+	public MemberDto memberGetInfo(String id);
 }

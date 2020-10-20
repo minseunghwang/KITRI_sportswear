@@ -190,7 +190,10 @@ public class MemberServiceImp implements MemberService {
 		HttpServletRequest request=(HttpServletRequest)map.get("request");
 		HttpSession session=request.getSession(false);
 		String id=(String) session.getAttribute("id");
-		//MemberDto dto=memberDao.memberGetInfo(id);
+		MemberDto dto=memberDao.memberGetInfo(id);
+		
+		mav.addObject("memberDto",dto);
+		mav.setViewName("/mypage/edit");
 		
 	}
 
