@@ -14,4 +14,6 @@ public interface MemberDao {
 	
 	public String memberGetPoint(Map<String,String> map);
 	public MemberDto memberGetInfo(String id);
+	public void memberDelete(String id);
+	public void memberUpdateInfo(Map<String, Object> map);
 }

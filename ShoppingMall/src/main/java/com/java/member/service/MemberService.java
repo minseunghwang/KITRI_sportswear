@@ -14,4 +14,7 @@ public interface MemberService {
 	
 	public void memberMyPage(ModelAndView mav);
 	public void memberEditPage(ModelAndView mav);
+	public void memberEditOk(ModelAndView mav);
+	public void memberDelete(ModelAndView mav);
+	
 }

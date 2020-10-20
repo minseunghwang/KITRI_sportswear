@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.java.member.dto.MemberDto;
 import com.java.member.service.MemberService;
 
 @Component
@@ -107,14 +108,24 @@ public class MemberController {
 		return mav;
 	}
 	
-//	@RequestMapping(value="/member/delete.do")
-//	public ModelAndView memberDelete(HttpServletRequest request, HttpServletResponse response) {
-//		
-//		System.out.println("OK.");
-//		ModelAndView mav=new ModelAndView();
-//		
-//		return mav;
-//	}
+	@RequestMapping(value="/member/editOk.do")
+	public ModelAndView memberEditOk(HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView mav=new ModelAndView();
+		mav.addObject("request",request);
+		memberService.memberEditOk(mav);
+		return mav;
+		
+	}
+	
+	@RequestMapping(value="/member/delete.do")
+	public ModelAndView memberDelete(HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView mav=new ModelAndView();
+		mav.addObject("request",request);
+		memberService.memberDelete(mav);
+		return mav;
+	}
+	
+
 	
 
 
