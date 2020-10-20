@@ -16,7 +16,7 @@ public interface ReviewDao {
 	ReviewDto select(int num);
 	
 	List<ReviewDto> selectByP_Num(int p_num);
-	ArrayList<ReviewDto> selectReviewInProductByPageNum(int p_num, int page);
+	List<ReviewDto> selectReviewInProductByPageNum(int p_num, int page);
 
 	void update(ReviewDto notice);
 
