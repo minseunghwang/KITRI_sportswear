@@ -103,13 +103,13 @@
 						<div class="col-lg-3 col-md-6 mb-4">
 							<div class="card h-100">
 
-								<a href="${pageContext.request.contextPath }/DetailController?num=${product.num }&page=1">
+								<a href="${pageContext.request.contextPath }/product/productDetail.do?num=${product.num }&page=1">
 									<img class="card-img-top" src="${pageContext.request.contextPath }/resources/${product.img }" height="316.25" alt="">
 
 								</a>
 								<div class="card-body">
 									<h6 class="card-title">
-										<a style="color: black;text-decoration: none;" href="${pageContext.request.contextPath }/DetailController?num=${product.num }&page=1"><b>${product.name }</b></a>
+										<a style="color: black;text-decoration: none;" href="${pageContext.request.contextPath }/product/productDetail.do?num=${product.num }&page=1"><b>${product.name }</b></a>
 									</h6>
 									<h7>￦ ${product.priceView }</h7>
 									

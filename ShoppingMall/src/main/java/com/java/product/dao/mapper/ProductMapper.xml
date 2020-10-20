@@ -50,5 +50,11 @@
 		]]>	
 	</select>
 	
+	<select id="detail_product" parameterType="int" resultMap="product_dto">
+		select *
+		from product
+		where num = #{num}
+	</select>
+	
 	
 </mapper> 

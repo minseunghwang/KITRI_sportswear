@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 import com.java.review.dto.ReviewDto;
 
+
 @Component
 public class ReviewDaoImpl implements ReviewDao{
 	
@@ -37,10 +38,11 @@ public class ReviewDaoImpl implements ReviewDao{
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
 	@Override
-	public List<ReviewDto> selectByP_Num(int p_num) {
-		return sqlSessionTemplate.selectList("pNum_Review",p_num);
+	public List<ReviewDto> selectByP_Num(int pnum) {
+		System.out.println("p_num : " +  pnum);
+		return sqlSessionTemplate.selectList("pNum_Review",pnum);
 	}
 
 	@Override

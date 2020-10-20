@@ -7,6 +7,7 @@ import com.java.review.dto.ReviewDto;
 
 
 
+
 public interface ReviewDao {
 	int selectNum();
 	int selectP_Num(int r_num);
@@ -20,7 +21,7 @@ public interface ReviewDao {
 	void update(ReviewDto notice);
 
 	void delete(int num);
-
+	
 	ArrayList<ReviewDto> selectAll();
 
 	ArrayList<ReviewDto> myselectAll(String m_id, int page);

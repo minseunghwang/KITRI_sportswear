@@ -16,7 +16,6 @@ public class ReviewDto {
 	}
 	
 	public ReviewDto(int num, String m_id, int p_num, int rate, String content, String img, Date r_date) {
-		super();
 		this.num = num;
 		this.m_id = m_id;
 		this.p_num=p_num;

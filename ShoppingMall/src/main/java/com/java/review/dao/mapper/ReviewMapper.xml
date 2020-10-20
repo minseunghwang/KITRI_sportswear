@@ -14,8 +14,7 @@
 		<result column="r_date" property="r_date"/>	
 	</resultMap>
 	
-	<select id="pNum_Review" parameterType="int" resultMap="review_dto">
-		select * from review where p_num=#{p_num} order by num
+	<select id="pNum_Review" parameterType="String" resultMap="review_dto">
+		select * from review where p_num=#{pnum} order by num
 	</select>
-	
 </mapper>
