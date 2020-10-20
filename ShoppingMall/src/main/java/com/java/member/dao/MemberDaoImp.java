@@ -68,6 +68,19 @@ public class MemberDaoImp implements MemberDao {
 		return sqlSessionTemplate.selectOne("memberGetInfo",id);
 	}
 
+	@Override
+	public void memberDelete(String id) {
+		sqlSessionTemplate.update("memberDelete",id);
+		
+	}
+
+	@Override
+	public void memberUpdateInfo(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		sqlSessionTemplate.update("memberUpdateInfo",map);
+		
+	}
+
 
 
 }

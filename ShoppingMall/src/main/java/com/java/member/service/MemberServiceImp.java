@@ -196,10 +196,44 @@ public class MemberServiceImp implements MemberService {
 		mav.setViewName("/mypage/edit");
 		
 	}
-
-
-    
 	
+	@Override
+	public void memberEditOk(ModelAndView mav) {
+		// TODO Auto-generated method stub
+		Map<String, Object> map =mav.getModelMap();
+		HttpServletRequest request=(HttpServletRequest)map.get("request");
+		Map<String, Object> hmap=new HashMap<String, Object>();
+		String id=request.getParameter("id");
+		String pwd=request.getParameter("pwd");
+		String email=request.getParameter("email");
+		String addr=request.getParameter("addr");
+		
+		hmap.put("id", id);
+		hmap.put("pwd", pwd);
+		hmap.put("email", email);
+		hmap.put("addr", addr);
+		
+		memberDao.memberUpdateInfo(hmap);
+		
+		
+		mav.setViewName("/main/main");
+		
+		
+	}
+
+	@Override
+	public void memberDelete(ModelAndView mav) {
+		// TODO Auto-generated method stub
+		Map<String, Object> map=mav.getModelMap();
+		HttpServletRequest request=(HttpServletRequest)map.get("request");
+		HttpSession session=request.getSession(false);
+		String id=(String) session.getAttribute("id");
+		memberDao.memberDelete(id);
+		
+		session.invalidate();
+		mav.setViewName("/main/main");
+		
+	}
 
 
 }

@@ -42,6 +42,7 @@
         function check(){
             var pwdtxt=document.f.pwd;
             var addrtxt=document.f.addr;
+            var emailtxt=document.f.email;
             if(pwdtxt.value==""){
                 alert("빈공란이 존재합니다.");
                 pwdtxt.value="";
@@ -55,6 +56,12 @@
                 addrtxt.focus();
                 return false;
             }
+            if(emailtxt.value==""){
+                alert("빈공란이 존재합니다.");
+                emailtxt.value="";
+                emailtxt.focus();
+                return false;
+            }
             
             alert("수정되었습니다.");
         }
@@ -62,7 +69,7 @@
         function checkrem(){
     		var flag=confirm("정말 탈퇴하겠습니까?")
     		if(flag){
-    			location.href="${pageContext.request.contextPath}/DelController";
+    			location.href="${pageContext.request.contextPath}/member/delete.do";
     			
     		}else{
     			alert("탈퇴가 취소되었습니다.");
@@ -92,7 +99,7 @@
 			
 				<h3>내 정보 수정</h3>
 			
-				<form action="${pageContext.request.contextPath }/User_EditController" name="f" method="post" onsubmit="return check()">
+				<form action="${pageContext.request.contextPath }/member/editOk.do" name="f" method="post" onsubmit="return check()">
 					<fieldset>
 						<div class="form-group">
 							<label for="ViewID">ID</label> 

@@ -54,4 +54,18 @@
  	)
  </insert>
  
+ <update id="memberDelete" parameterType="String">
+ 	update member
+ 	set type=NULL
+ 	where id=#{id}
+ </update>
+ 
+ <update id="memberUpdateInfo" parameterType="java.util.Map">
+ 	update member
+ 	set pwd=#{pwd},
+ 		email=#{email},
+ 		addr=#{addr}
+ 	where id=#{id}
+ </update>
+ 
  </mapper>

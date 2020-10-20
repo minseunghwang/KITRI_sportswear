@@ -14,16 +14,12 @@ import com.java.common.PaginationVO;
 import com.java.common.ProductImageVO;
 import com.java.common.ProductSizeVO;
 import com.java.member.service.MemberService;
-import com.java.member.service.MemberServiceImp;
-import com.java.notice.service.NoticeService;
 import com.java.pagenation.dto.PaginationDto;
 import com.java.product.dao.ProductDao;
 import com.java.product.dto.ProductDto;
 import com.java.review.dao.ReviewDao;
-import com.java.review.dao.ReviewDaoImpl;
 import com.java.review.dto.ReviewDto;
 import com.java.review.service.ReviewService;
-import com.java.review.service.ReviewServiceImpl;
 
 
 @Component
